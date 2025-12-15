@@ -17,6 +17,8 @@ struct ContentView: View {
                         .font(.title2)
                         .bold()
                 }
+                .padding()
+                .frame(maxWidth: .infinity)
             }
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)

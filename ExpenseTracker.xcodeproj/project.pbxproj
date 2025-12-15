@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		9BCA67C82EEFE86700253387 /* SwiftUIFontIcon in Frameworks */ = {isa = PBXBuildFile; productRef = 9BCA67C72EEFE86700253387 /* SwiftUIFontIcon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		9B5C3C052EC9E46B006DF47E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BCA67C82EEFE86700253387 /* SwiftUIFontIcon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 				9B5C3BF92EC9E469006DF47E /* ExpenseTracker */,
 				9B5C3C072EC9E46B006DF47E /* ExpenseTrackerTests */,
 				9B5C3C112EC9E46B006DF47E /* ExpenseTrackerUITests */,
+				9BCA67C62EEFE86700253387 /* Frameworks */,
 				9B5C3BF82EC9E469006DF47E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +96,13 @@
 				9B5C3C0E2EC9E46B006DF47E /* ExpenseTrackerUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9BCA67C62EEFE86700253387 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +125,7 @@
 			);
 			name = ExpenseTracker;
 			packageProductDependencies = (
+				9BCA67C72EEFE86700253387 /* SwiftUIFontIcon */,
 			);
 			productName = ExpenseTracker;
 			productReference = 9B5C3BF72EC9E469006DF47E /* ExpenseTracker.app */;
@@ -195,6 +209,9 @@
 			);
 			mainGroup = 9B5C3BEE2EC9E469006DF47E;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				9BCA67C52EEFE86000253387 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 9B5C3BF82EC9E469006DF47E /* Products */;
 			projectDirPath = "";
@@ -558,6 +575,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9BCA67C52EEFE86000253387 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huybuidac/SwiftUIFontIcon";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9BCA67C72EEFE86700253387 /* SwiftUIFontIcon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9BCA67C52EEFE86000253387 /* XCRemoteSwiftPackageReference "SwiftUIFontIcon" */;
+			productName = SwiftUIFontIcon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9B5C3BEF2EC9E469006DF47E /* Project object */;
 }
