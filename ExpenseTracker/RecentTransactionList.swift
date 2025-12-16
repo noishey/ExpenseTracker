@@ -18,7 +18,7 @@ struct RecentTransactionList: View {
                 Spacer()
                 // MARK: Header Link
                 NavigationLink(){
-                   
+                   TransactionList()
                 } label: {
                     HStack(spacing: 4){
                         Text("See All")
@@ -29,7 +29,7 @@ struct RecentTransactionList: View {
             }
             .padding(.top)
             // MARK: Recent Transaction List
-            ForEach(Array(transactionListVM.transaction.prefix(5).enumerated()), id: \.element) { index, transaction in
+            ForEach(Array(transactionListVM.transactions.prefix(5).enumerated()), id: \.element) { index, transaction in
                 TransactionRow(transaction: transaction)
                 Divider()
                     .opacity(index == 4 ? 0 : 1)
@@ -44,15 +44,16 @@ struct RecentTransactionList: View {
 
 #Preview("Light") {
     let transactionListVM = TransactionListViewModel()
-    transactionListVM.transaction = transactionListPreviewData
+    transactionListVM.transactions = transactionListPreviewData
     return RecentTransactionList()
         .environmentObject(transactionListVM)
 }
 
 #Preview("Dark") {
     let transactionListVM = TransactionListViewModel()
-    transactionListVM.transaction = transactionListPreviewData
+    transactionListVM.transactions = transactionListPreviewData
     return RecentTransactionList()
         .preferredColorScheme(.dark)
         .environmentObject(transactionListVM)
 }
+

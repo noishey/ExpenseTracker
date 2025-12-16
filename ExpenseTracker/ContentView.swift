@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ContentView: View {
     var body: some View {
@@ -16,18 +17,22 @@ struct ContentView: View {
                     Text("Overview")
                         .font(.title2)
                         .bold()
+                    //MARK: Chart
+                    LineChart()
+                    //MARK: Transaction List
+                    RecentTransactionList()
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
             }
-            .background(Color.background)
+            .background(Color.appBackground)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 // MARK: Notification Icon
                 ToolbarItem {
                     Image(systemName: "bell.badge")
                         .symbolRenderingMode(.palette)
-                        .foregroundStyle(Color.icon, .primary)
+                        .foregroundStyle(Color.appIcon, .primary)
                 }
             }
         }
@@ -35,6 +40,24 @@ struct ContentView: View {
     }
 }
 
-#Preview {
+#Preview("Light") {
+    let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transactionListPreviewData
+        return transactionListVM
+    }()
     ContentView()
+        .environmentObject(transactionListVM)
 }
+
+#Preview("Dark") {
+    let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transactionListPreviewData
+        return transactionListVM
+    }()
+    ContentView()
+        .environmentObject(transactionListVM)
+        .preferredColorScheme(.dark)
+}
+
